@@ -23,16 +23,16 @@ int main() {
     else if (operation == '*') {
         printf("Product: %.2f\n", num1 * num2);
     }
-       else if (operation == '/') {
-        if (num2 != 0) {
-            printf("Quotient: %.2f\n", num1 / num2);
+    else if (operation == '/') {
+        if (num2 == 0) {
+            printf("Error: Division by zero is not allowed.\n");
+            return 1; // Exit the program with an error code
         }
-        else {
-            printf("Error: Cannot divide by zero.\n");
-        }
+        printf("Quotient: %.2f\n", num1 / num2);
     }
     else {
-        printf("Invalid operation.\n");
+        printf("Error: Invalid operation. Please use +, -, *, or /.\n");
+        return 1; // Exit the program with an error code
     }
 
     return 0;
